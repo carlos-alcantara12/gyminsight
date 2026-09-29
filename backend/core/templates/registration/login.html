@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | GymInsight</title>
+  <link rel="stylesheet" href="{% static 'core/app.css' %}">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <div class="login-brand" aria-label="GymInsight">
+      <span class="login-symbol" aria-hidden="true">◈</span>
+      <span>GymInsight</span>
+    </div>
+    <div class="login-heading">
+      <span class="login-kicker">ACESSO AO SISTEMA</span>
+      <h1>Bem-vindo de volta</h1>
+      <p>Entre com suas credenciais para acessar o painel da academia.</p>
+    </div>
+    {% if form.errors %}
+      <p class="login-error" role="alert">Usuário ou senha inválidos. Confira os dados e tente novamente.</p>
+    {% endif %}
+    <form method="post" class="login-form">
+      {% csrf_token %}
+      <label for="username">Usuário</label>
+      <input id="username" name="username" type="text" required autocomplete="username" autofocus placeholder="Digite seu usuário">
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Digite sua senha">
+      <input type="hidden" name="next" value="{{ next|default:'/' }}">
+      <button type="submit">Entrar no sistema <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="login-support">Problemas para acessar? Procure o gerente da sua unidade.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,97 @@
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#192e35;background:#f3f7f5}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}.layout{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh}aside{background:#102c2d;color:#d3e3dd;padding:30px 18px;display:flex;flex-direction:column}.brand{font-weight:800;font-size:22px;letter-spacing:-.04em;color:#fff;margin:4px 10px 42px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;color:#6a9f90}aside .eyebrow{margin:0 12px 18px}nav{display:grid;gap:5px}.nav,.logout button{background:transparent;border:0;color:#bbd1ca;text-align:left;padding:12px 14px;width:100%;border-radius:9px}.nav:hover,.nav.active{color:#fff;background:#25534d}.logout{margin-top:auto;border-top:1px solid #335551;padding-top:18px}main{padding:42px clamp(20px,5vw,72px)}header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:34px}h1{font-size:clamp(29px,3vw,40px);letter-spacing:-.055em;margin:10px 0 6px}header p{color:#748782;margin:0}.user{border-radius:50px;background:#e3eee9;padding:10px 16px;font-size:13px;font-weight:700}.panel{background:white;border:1px solid #e5eeea;border-radius:16px;box-shadow:0 15px 45px #1839300a;overflow:hidden}.toolbar{padding:25px 28px;display:flex;justify-content:space-between;align-items:center;gap:15px}h2{margin:7px 0 0;font-size:19px;letter-spacing:-.03em}.secondary{background:white;border:1px solid #d5e3dd;border-radius:8px;padding:9px 13px;color:#30564d}.secondary:hover{background:#e8f2ed}.table-scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:650px}th,td{text-align:left;padding:15px 28px;border-top:1px solid #edf1ef;font-size:13px}th{background:#f8faf9;color:#668177;font-size:11px;text-transform:uppercase;letter-spacing:.08em}td{color:#27423d}.pill{display:inline-block;background:#e5f5ec;color:#20724c;border-radius:99px;padding:5px 9px;font-weight:700}.pill.muted{background:#f1f3f2;color:#62766e}.pager{padding:18px 28px;display:flex;align-items:center;justify-content:flex-end;gap:14px;color:#6e8178;font-size:13px}button:disabled{opacity:.4;cursor:default}#notice:not(:empty){margin:0 28px 18px;padding:12px;background:#fff2e9;color:#87470d;border-radius:7px}.login-page{min-height:100vh;display:grid;place-items:center;padding:18px}.login-card{background:#fff;border:1px solid #e5eeea;box-shadow:0 15px 45px #18393012;border-radius:16px;padding:36px;width:min(100%,420px)}.login-card .brand{color:#194b3e;margin:0 0 26px}.login-card p{color:#6b8178}.login-card label{display:grid;gap:8px;margin:18px 0;font-size:13px;font-weight:700}.login-card input{border:1px solid #d4e0da;border-radius:8px;padding:12px}.login-card button{width:100%;border:0;background:#1d6951;color:#fff;border-radius:8px;padding:13px;font-weight:700}.login-card .error{color:#a33b28}@media(max-width:720px){.layout{display:block}aside{padding:15px}.brand{margin:2px 4px 12px}aside .eyebrow{display:none}nav{display:flex;overflow-x:auto}.nav{white-space:nowrap;width:auto}.logout{margin:5px 0 0;padding:0;border:0}main{padding:24px 14px}header{align-items:flex-start}.toolbar{padding:20px}.user{font-size:11px}th,td{padding:12px 16px}}
+
+/* Tela de login */
+.login-page{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:32px 18px;background:#f4f5f4}
+.login-card{width:min(100%,464px);background:#fff;border:1px solid #e5e9e6;border-radius:20px;padding:42px;box-shadow:0 22px 70px rgba(20,46,39,.07),0 2px 8px rgba(20,46,39,.03)}
+.login-brand{display:flex;align-items:center;gap:10px;color:#183e33;font-size:21px;font-weight:800;letter-spacing:-.045em}
+.login-symbol{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#1e674e;color:white;font-size:24px;line-height:1}
+.login-heading{margin:37px 0 31px}.login-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:#417a61}
+.login-heading h1{margin:10px 0 8px;font-size:29px;line-height:1.2;letter-spacing:-.04em}
+.login-heading p{margin:0;color:#6c7b74;line-height:1.55;font-size:14px}
+.login-form{display:grid}.login-form label{font-size:13px;font-weight:700;color:#263c32;margin-bottom:8px}
+.login-form input:not([type=hidden]){width:100%;height:46px;border:1px solid #d9e1dc;background:#fff;border-radius:9px;padding:0 13px;margin-bottom:20px;color:#19392c;outline:0;transition:border-color .15s,box-shadow .15s}
+.login-form input::placeholder{color:#9aa9a1}.login-form input:focus-visible{border-color:#277657;box-shadow:0 0 0 3px rgba(39,118,87,.14)}
+.login-form button{width:100%;margin-top:4px;border:0;border-radius:9px;background:#1e674e;color:#fff;padding:14px 16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .15s}
+.login-form button:hover{background:#15563f}.login-form button:focus-visible{outline:3px solid #8ac2a4;outline-offset:3px}
+.login-support{border-top:1px solid #edf0ed;padding-top:22px;margin:30px 0 0;text-align:center;color:#7b8880;font-size:12px;line-height:1.5}
+.login-error{background:#fff2ef;color:#9b3f2f;border:1px solid #f2d6d0;border-radius:9px;padding:11px 13px;font-size:13px;line-height:1.4;margin:0 0 22px}
+@media(max-width:480px){.login-card{padding:30px 24px;border-radius:16px}.login-heading{margin:32px 0 27px}.login-heading h1{font-size:26px}}
+
+/* Módulo de alunos */
+.toolbar-actions,.dialog-actions,.detail-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.primary{border:1px solid #1e674e;background:#1e674e;color:white;border-radius:8px;padding:10px 16px;font-weight:700}
+.primary:hover{background:#15563f}.primary:disabled{opacity:.55;cursor:wait}
+button:focus-visible{outline:3px solid #89bea4;outline-offset:2px}
+.student-dialog{width:min(94vw,670px);max-height:min(88vh,860px);border:1px solid #dce8e1;border-radius:16px;box-shadow:0 24px 90px #112c2850;padding:28px;color:#193b30;overflow:auto}
+.student-dialog::backdrop{background:rgba(15,34,31,.55)}.dialog-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.dialog-head h2{font-size:25px;margin:7px 0 22px}
+#student-feedback:not(:empty){background:#fff1e7;color:#8c4314;padding:12px;border-radius:8px;font-size:13px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.student-dialog label{display:grid;gap:7px;font-size:13px;font-weight:700}.student-dialog input,.student-dialog select{width:100%;padding:11px;border:1px solid #d7e2db;border-radius:8px;background:#fff;color:#193b30;font:inherit}.student-dialog input:focus-visible,.student-dialog select:focus-visible{outline:3px solid #a4ceb8;border-color:#1e674e}
+.student-dialog fieldset{margin:23px 0 0;border:1px solid #dce8e1;border-radius:10px;padding:17px}.student-dialog legend{font-weight:700;padding:0 5px}.student-dialog fieldset p{font-size:12px;color:#687d71;margin:12px 0 0}.dialog-actions{justify-content:flex-end;margin-top:25px}
+.student-profile{display:grid;grid-template-columns:160px 1fr;gap:12px;margin:5px 0 25px}.student-profile dt{color:#698075}.student-profile dd{margin:0;font-weight:650;overflow-wrap:anywhere}.detail-actions{border-top:1px solid #e8efea;padding-top:18px}#attendance-results{margin-top:20px;border-top:1px solid #e8efea;padding-top:10px}#attendance-results h3{font-size:16px}#filter-attendance{margin-top:14px}#attendance-summary{font-weight:700}
+[hidden]{display:none!important}@media(max-width:600px){.student-dialog{padding:21px}.form-grid{grid-template-columns:1fr}.student-profile{grid-template-columns:110px 1fr}.toolbar-actions{justify-content:flex-end}}
+
+/* Módulo de matrículas */
+#enrollment-dialog textarea{width:100%;padding:11px;border:1px solid #d7e2db;border-radius:8px;background:#fff;color:#193b30;font:inherit;resize:vertical}
+#enrollment-dialog textarea:focus-visible{outline:3px solid #a4ceb8;border-color:#1e674e}
+#cancel-enrollment-form{margin-top:22px;padding:18px;border:1px solid #eadad5;background:#fff9f7;border-radius:10px}
+.form-hint{color:#687d71;font-size:13px;line-height:1.5;margin:17px 0 0}
+.danger{color:#a5382a;border-color:#e5bdb5}.danger:hover{background:#fff1ed}
+.danger-fill{background:#a5382a;border-color:#a5382a}.danger-fill:hover{background:#81291e}
+
+/* Módulo de planos */
+#plan-form .check-row{align-self:end;display:flex;align-items:center;gap:10px;min-height:43px}
+#plan-form .check-row input{width:18px;height:18px;accent-color:#1e674e;margin:0;flex:none}
+
+/* Relatório de frequência */
+.report-panel .toolbar{padding-bottom:10px}.report-hint{color:#71857b;font-size:13px;margin:9px 0 0}
+.report-filters{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px;padding:12px 28px 22px}
+.report-filters label{display:grid;gap:6px;font-size:12px;font-weight:700;color:#456256}
+.report-filters input{height:40px;border:1px solid #d4e0da;border-radius:8px;padding:8px 10px;color:#193b30;font:inherit}
+.report-filters input:focus-visible{outline:3px solid #a4ceb8}
+.report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 28px 24px}
+.report-stats div{border:1px solid #e4ece7;background:#f8faf9;border-radius:10px;padding:18px;display:grid;gap:9px}
+.report-stats span{font-size:12px;color:#657e70}.report-stats strong{font-size:26px;letter-spacing:-.04em;color:#21573f}
+#report-error:not(:empty){margin:0 28px 18px;padding:12px;background:#fff2e9;color:#87470d;border-radius:7px}
+@media(max-width:650px){.report-filters{padding:12px 20px 20px}.report-stats{grid-template-columns:1fr;gap:8px;margin:0 20px 20px}.report-stats div{padding:13px}.report-stats strong{font-size:22px}}
+
+/* Lista de alunos matriculados */
+.enrolled-stats{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:12px;padding:0 28px 16px}
+.enrolled-stats div{display:grid;gap:4px;background:#f8faf9;border:1px solid #e4ece7;border-radius:10px;padding:14px}
+.enrolled-stats strong{font-size:25px;color:#21573f}.enrolled-stats span{font-size:12px;color:#657e70}
+.enrollment-status.atrasada{background:#fff0e5;color:#a44c16}.enrollment-status.cancelada{background:#f1f3f2;color:#62766e}
+.enrollment-status.sem_cobranca,.enrollment-status.encerrada{background:#eef0f7;color:#576482}
+.enrollment-status.a_vencer{background:#fff6d9;color:#775700}
+.payment-arrears{display:block;margin-top:5px;color:#a44c16;line-height:1.4}
+#enrolled-error:not(:empty){margin:0 28px 18px;padding:12px;background:#fff2e9;color:#87470d;border-radius:7px}
+.report-filters select{height:40px;border:1px solid #d4e0da;border-radius:8px;padding:8px 10px;background:white;color:#193b30;font:inherit}
+@media(max-width:850px){.enrolled-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.enrolled-stats{padding:0 20px 16px}}
+
+/* Painel financeiro */
+.finance-overview{margin:0 28px 24px;border:1px solid #dce8e1;border-radius:14px;background:#fff;padding:24px}
+.finance-overview-head{display:flex;justify-content:space-between;align-items:start;gap:20px}
+.finance-overview-head h3{margin:0 0 5px;color:#193e30;font-size:19px}
+.finance-overview-head p,.finance-pie-note{margin:0;color:#64776c;font-size:13px;line-height:1.5}
+#finance-chart-updated{color:#64776c;font-size:12px;white-space:nowrap}
+.finance-pie-content{display:flex;align-items:center;gap:38px;margin:22px 0;flex-wrap:wrap}
+.finance-pie-outer{width:225px;height:225px;border-radius:50%;background:#238e58;padding:16px;flex:none;box-shadow:0 4px 16px #193e3014}
+.finance-pie-inner{width:100%;height:100%;border-radius:50%;background:#e7ecea;border:4px solid #fff}
+.finance-pie-details{display:grid;gap:11px;flex:1;min-width:235px}
+.finance-pie-details>div{display:grid;grid-template-columns:13px minmax(100px,1fr) auto;gap:10px;align-items:center;font-size:14px}
+.finance-pie-details strong{color:#193e30;font-variant-numeric:tabular-nums;white-space:nowrap}
+.finance-swatch{width:12px;height:12px;border-radius:3px}
+.finance-swatch.green{background:#238e58}.finance-swatch.blue{background:#1c5ba8}.finance-swatch.sky{background:#64a5e8}.finance-swatch.slate{background:#8199bb}.finance-swatch.red{background:#d64242}
+@media(max-width:600px){.finance-overview{margin:0 20px 20px;padding:18px}.finance-overview-head{display:block}#finance-chart-updated{display:block;margin-top:9px}.finance-pie-content{justify-content:center;gap:22px}.finance-pie-outer{width:190px;height:190px}.finance-pie-details{width:100%;min-width:0}.finance-pie-details>div{font-size:12px}}
+#finance-stats strong{font-size:clamp(16px,2vw,23px);overflow-wrap:anywhere}
+#finance-error:not(:empty){margin:0 28px 18px;padding:12px;background:#fff2e9;color:#87470d;border-radius:7px}
+#finance-form button{align-self:end}
+
+.finance-network{margin:0 28px 24px;border:1px solid #e4ece7;border-radius:12px;overflow:hidden}
+.finance-network h3,.finance-list-title{font-size:17px;margin:20px 20px 5px}
+.finance-network .report-hint{margin:0 20px 17px}
+.finance-network table{min-width:920px}
+.finance-network th,.finance-network td{padding:12px 16px}
+.finance-network tfoot td{font-weight:750;background:#e9f3ee}
+.finance-selected-unit td{background:#f2faf6}
+.finance-list-title{margin:18px 28px}
+@media(max-width:600px){.finance-network{margin:0 20px 20px}}
