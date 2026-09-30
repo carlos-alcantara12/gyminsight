@@ -346,7 +346,7 @@ class StudentFrontendTests(TestCase):
         cliente.get("/contas/login/")
         cliente.force_login(gerente)
         self.assertContains(cliente.get("/"), 'id="unit-picker"')
-        self.assertContains(cliente.get("/"), 'core/unidades.js')
+        self.assertContains(cliente.get("/"), 'js/unidades.js')
         payload = json.dumps({"nome": "Nova filial", "categoria": "diamante"})
         self.assertEqual(cliente.post("/api/unidades/", data=payload, content_type="application/json").status_code, 403)
         criada = cliente.post("/api/unidades/", data=payload, content_type="application/json",
@@ -378,7 +378,7 @@ class StudentFrontendTests(TestCase):
         cliente = Client(HTTP_HOST="localhost")
         cliente.force_login(usuario)
         self.assertContains(cliente.get("/"), 'data-section="relatorios"')
-        self.assertContains(cliente.get("/"), "core/relatorios.js")
+        self.assertContains(cliente.get("/"), "js/relatorios.js")
         resultado = cliente.get("/api/alunos/relatorio-frequencia/").json()
         self.assertEqual(resultado["resumo"]["total_alunos"], 1)
         self.assertEqual(resultado["results"][0]["aluno_id"], aluno.pk)
@@ -403,7 +403,7 @@ class StudentFrontendTests(TestCase):
             "csrfmiddlewaretoken": cliente.cookies["csrftoken"].value,
         })
         self.assertContains(cliente.get("/"), 'id="new-presence"')
-        self.assertContains(cliente.get("/"), "core/presencas.js")
+        self.assertContains(cliente.get("/"), "js/presencas.js")
         token = cliente.cookies["csrftoken"].value
         sem_token = cliente.post("/api/frequencias/", data=json.dumps({"matricula": matricula.pk}),
                                 content_type="application/json")
@@ -436,7 +436,7 @@ class StudentFrontendTests(TestCase):
             "csrfmiddlewaretoken": cliente.cookies["csrftoken"].value,
         })
         self.assertContains(cliente.get("/"), "Novo plano")
-        self.assertContains(cliente.get("/"), "core/planos.js")
+        self.assertContains(cliente.get("/"), "js/planos.js")
         token = cliente.cookies["csrftoken"].value
         payload = {"nome": "Mensal web", "duracao_dias": 30, "preco": "99.90", "ativo": True}
         criado = cliente.post("/api/planos/", data=json.dumps(payload),
@@ -474,7 +474,7 @@ class StudentFrontendTests(TestCase):
         }).status_code, 302)
         painel = cliente.get("/")
         self.assertContains(painel, "Novo aluno")
-        self.assertContains(painel, "core/alunos.js")
+        self.assertContains(painel, "js/alunos.js")
         token = cliente.cookies["csrftoken"].value
         import json
         resposta = cliente.post("/api/alunos/", data=json.dumps({
@@ -507,7 +507,7 @@ class StudentFrontendTests(TestCase):
             "csrfmiddlewaretoken": cliente.cookies["csrftoken"].value,
         })
         self.assertContains(cliente.get("/"), "Nova matrícula")
-        self.assertContains(cliente.get("/"), "core/matriculas.js")
+        self.assertContains(cliente.get("/"), "js/matriculas.js")
         token = cliente.cookies["csrftoken"].value
         criada = cliente.post("/api/matriculas/", data=json.dumps({
             "aluno": str(aluno.pk), "plano": str(plano.pk), "inicio": timezone.localdate().isoformat(),

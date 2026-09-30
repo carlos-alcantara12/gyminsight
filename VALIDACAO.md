@@ -12,7 +12,7 @@ A migração `0008` substitui Professor e PerfilUsuario por Funcionario (Gerente
 
 - `python manage.py test core`: 61 testes passaram; incluem isolamento por unidade, papéis de acesso, CSRF, cadastro, matrículas, entradas, relatórios e ausência do endpoint de avaliação física.
 - `python manage.py check` e `python manage.py makemigrations --check --dry-run`: sem problemas ou migrações pendentes.
-- `node --check core/static/core/app.js`: sintaxe válida.
+- `node --check ../frontend/js/app.js`: sintaxe válida.
 - Banco de demonstração: migração `0009` aplicada, apenas dois grupos, 10 alunos, 10 matrículas, 10 entradas, um funcionário técnico e arquivo clínico vazio; `PRAGMA integrity_check` retornou `ok`, sem falhas em `foreign_key_check`.
 
 A migração conserva dados clínicos anteriores em tabela de arquivo fora do aplicativo. A visão financeira agregada, as regras de acesso dos três planos e as mensalidades por competência são etapas pendentes. Testes locais não substituem validação em ambiente de produção.

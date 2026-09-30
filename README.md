@@ -177,7 +177,7 @@ O frontend inclui consulta paginada, navegação, login e os módulos de alunos,
 
 Na seção **Alunos**, usuários autorizados podem cadastrar o aluno junto de sua primeira matrícula (plano ativo e data de início), abrir detalhes e editar nome, e-mail, telefone e data de nascimento. A frequência mostra total de entradas, dias com presença e contagem diária, com filtro opcional de datas. O botão **Novo aluno** depende das permissões para criar aluno e matrícula e visualizar plano; **Editar cadastro** depende da permissão de alteração. A API continua validando permissões e unidade em todas as operações. Não há exclusão de alunos pela API, para preservar o histórico.
 
-Para testar em um navegador: inicie `python manage.py runserver` em `backend`, abra `/contas/login/` e entre com um usuário vinculado a uma unidade e a um grupo. Prepare um plano ativo na unidade antes de cadastrar alunos. O formulário utiliza sessão do Django e token CSRF. O arquivo `core/static/core/alunos.js` contém a lógica dessa seção.
+Para testar em um navegador: inicie `python manage.py runserver` em `backend`, abra `/contas/login/` e entre com um usuário vinculado a uma unidade e a um grupo. Prepare um plano ativo na unidade antes de cadastrar alunos. O formulário utiliza sessão do Django e token CSRF. O arquivo `frontend/js/alunos.js` contém a lógica dessa seção.
 
 ### Módulo de matrículas
 
